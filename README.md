@@ -7,6 +7,13 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
 
-Glood sugar level measures obtained since DM1 diagnosis in 2022-02-09.
+Blood sugar level measures obtained since DM1 diagnosis in 2022-02-09.
 
 Obtain the clear data from this repository in the [Kaggle dataset](https://www.kaggle.com/datasets/hssiqueira/blood-sugar-level)
+
+Range (ml/dL) | Description
+:---: | :---:
+0-69 | Hypoglycemia
+70-140 | Normal and desired range
+70-180 | Target range
+140+ | Hyperglycemia
