@@ -1,8 +1,8 @@
 from glob import glob
-from re import compile
 from os.path import basename,dirname,realpath
 from pandas import read_csv
 import logging
+import re
 
 columnTypes = {'Before breakfast': 'Int64',
                '2h after breakfast': 'Int64',
@@ -34,7 +34,7 @@ monthMapping = {'jan': 'Jan',
 def formatCSV():
     dataDir = dirname(realpath(__file__)).replace("project/util","data/formatted/")
     files = [f for f in glob(''.join([dataDir,'*.csv']))]
-    pattern = compile(r'^(([^,]*,){8}[^,]*)')
+    pattern = re.compile(r'^(([^,]*,){8}[^,]*)')
     logging.info(f"{len(files)} files found. Formatting data...")
     for file in files:
         year = basename(file).replace('.csv','')
@@ -57,5 +57,6 @@ def formatCSV():
             logging.info(f"{year} already formatted.")
 
 if __name__ == '__main__':
+
     logging.basicConfig(level=logging.INFO, format='[%(threadName)s:%(filename)s:%(funcName)s:%(lineno)d]|[%(asctime)s]|[%(levelname)s]: %(message)s')
     formatCSV()

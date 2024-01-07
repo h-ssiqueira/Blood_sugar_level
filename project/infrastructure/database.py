@@ -35,7 +35,7 @@ def importData(cursor,conn,dataDir):
     logging.info(f"{len(files)} CSV files found. Importing data...")
     for file in files:
         year = basename(file).replace(".csv",'')
-        cursor.execute("SELECT COUNT(*) FROM blood_sugar_level WHERE YEAR(date) = " + year)
+        cursor.execute("SELECT COUNT(*) FROM blood_sugar_level WHERE YEAR(date) = %s", (year,))
         if cursor.fetchone()[0] == 0:
             logging.info(f"Inserting data from {year}.")
             file = read_csv(file, sep=',')
@@ -45,7 +45,15 @@ def importData(cursor,conn,dataDir):
                     INSERT INTO blood_sugar_level
                     (date, breakfast, after_breakfast, lunch, after_lunch, dinner, after_dinner, extra, comment)
                     VALUES (STR_TO_DATE(%s, '%Y-%m-%d'), %s, %s, %s, %s, %s, %s, %s, %s);
-                """, (f"{year}-{parsed_date.month}-{parsed_date.day}", row['Before breakfast'], row['2h after breakfast'], row['Before lunch'], row['2h after lunch'], row['Before dinner'], row['2h after dinner'], row['Extra'], row['Comment']))
+                """, (f"{year}-{parsed_date.month}-{parsed_date.day}",
+                      row['Before breakfast'],
+                      row['2h after breakfast'],
+                      row['Before lunch'],
+                      row['2h after lunch'],
+                      row['Before dinner'],
+                      row['2h after dinner'],
+                      row['Extra'],
+                      row['Comment']))
             conn.commit()
             logging.info(f"Data from {year} inserted successfully.")
         else:
@@ -61,7 +69,9 @@ def updateViews(cursor,conn,dataDir):
     logging.info("Views updated successfully.")
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO, format='[%(threadName)s:%(filename)s:%(funcName)s:%(lineno)d]|[%(asctime)s]|[%(levelname)s]: %(message)s')
+
+    logging.basicConfig(level=logging.INFO,
+                        format='[%(threadName)s:%(filename)s:%(funcName)s:%(lineno)d]|[%(asctime)s]|[%(levelname)s]: %(message)s')
     logging.getLogger('mysql.connector').setLevel(logging.WARNING)
     dataDir = dirname(realpath(__file__)).replace("project/infrastructure","data/")
     conn, cursor = stablishConnection()
