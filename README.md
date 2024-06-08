@@ -1,4 +1,4 @@
-# Blood sugar level
+# Blood Sugar Level
 ![GitHub repository size](https://img.shields.io/github/repo-size/h-ssiqueira/Blood_sugar_level?label=Repository%20Size&style=for-the-badge)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/1f7293af6e0f479fb811c804539c503f)](https://app.codacy.com/gh/h-ssiqueira/Blood_sugar_level/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
@@ -8,14 +8,22 @@
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Plotly](https://img.shields.io/badge/plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
 
 Blood sugar level measures obtained since DM1 diagnosis in 2022-02-09.
 
-Obtain the clear data from this repository in the [Kaggle dataset](https://www.kaggle.com/datasets/hssiqueira/blood-sugar-level)
+Obtain the clear data from this repository in the [Kaggle dataset](https://www.kaggle.com/datasets/hssiqueira/blood-sugar-level).
 
+[Data visualization example](https://www.kaggle.com/code/hssiqueira/blood-sugar-rate-example).
+
+## Information
 Range (mg/dL) | Description
 :---: | :---:
 <70 | Hypoglycemia
 70 <= x <= 140 | Normal and desired range
 140< | Hyperglycemia
 70 <= x <= 180 | Target range
+
+Important insights
+- The difference between before sleep measure and the before breakfast measure should be 30 mg/dL or less.
+- An uncontrolled case refers to a hypoglycemia measure followed by a hyperglycemia measure or vice-versa.
