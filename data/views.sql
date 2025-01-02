@@ -114,3 +114,64 @@ CREATE OR REPLACE VIEW `2023_december` AS
 SELECT `date`, breakfast, after_breakfast, lunch, after_lunch, dinner, after_dinner, extra, comment
 FROM blood_sugar_level
 WHERE date BETWEEN '2023-12-01' AND '2023-12-31';
+
+-- 2024
+CREATE OR REPLACE VIEW `2024_january` AS
+SELECT `date`, breakfast, after_breakfast, lunch, after_lunch, dinner, after_dinner, extra, comment
+FROM blood_sugar_level
+WHERE date BETWEEN '2024-01-01' AND '2024-01-31';
+
+CREATE OR REPLACE VIEW `2024_february` AS
+SELECT `date`, breakfast, after_breakfast, lunch, after_lunch, dinner, after_dinner, extra, comment
+FROM blood_sugar_level
+WHERE date BETWEEN '2024-02-01' AND '2024-02-29';
+
+CREATE OR REPLACE VIEW `2024_march` AS
+SELECT `date`, breakfast, after_breakfast, lunch, after_lunch, dinner, after_dinner, extra, comment
+FROM blood_sugar_level
+WHERE date BETWEEN '2024-03-01' AND '2024-03-31';
+
+CREATE OR REPLACE VIEW `2024_april` AS
+SELECT `date`, breakfast, after_breakfast, lunch, after_lunch, dinner, after_dinner, extra, comment
+FROM blood_sugar_level
+WHERE date BETWEEN '2024-04-01' AND '2024-04-30';
+
+CREATE OR REPLACE VIEW `2024_may` AS
+SELECT `date`, breakfast, after_breakfast, lunch, after_lunch, dinner, after_dinner, extra, comment
+FROM blood_sugar_level
+WHERE date BETWEEN '2024-05-01' AND '2024-05-31';
+
+CREATE OR REPLACE VIEW `2024_june` AS
+SELECT `date`, breakfast, after_breakfast, lunch, after_lunch, dinner, after_dinner, extra, comment
+FROM blood_sugar_level
+WHERE date BETWEEN '2024-06-01' AND '2024-06-30';
+
+CREATE OR REPLACE VIEW `2024_july` AS
+SELECT `date`, breakfast, after_breakfast, lunch, after_lunch, dinner, after_dinner, extra, comment
+FROM blood_sugar_level
+WHERE date BETWEEN '2024-07-01' AND '2024-07-31';
+
+CREATE OR REPLACE VIEW `2024_august` AS
+SELECT `date`, breakfast, after_breakfast, lunch, after_lunch, dinner, after_dinner, extra, comment
+FROM blood_sugar_level
+WHERE date BETWEEN '2024-08-01' AND '2024-08-31';
+
+CREATE OR REPLACE VIEW `2024_september` AS
+SELECT `date`, breakfast, after_breakfast, lunch, after_lunch, dinner, after_dinner, extra, comment
+FROM blood_sugar_level
+WHERE date BETWEEN '2024-09-01' AND '2024-09-30';
+
+CREATE OR REPLACE VIEW `2024_october` AS
+SELECT `date`, breakfast, after_breakfast, lunch, after_lunch, dinner, after_dinner, extra, comment
+FROM blood_sugar_level
+WHERE date BETWEEN '2024-10-01' AND '2024-10-31';
+
+CREATE OR REPLACE VIEW `2024_november` AS
+SELECT `date`, breakfast, after_breakfast, lunch, after_lunch, dinner, after_dinner, extra, comment
+FROM blood_sugar_level
+WHERE date BETWEEN '2024-11-01' AND '2024-11-30';
+
+CREATE OR REPLACE VIEW `2024_december` AS
+SELECT `date`, breakfast, after_breakfast, lunch, after_lunch, dinner, after_dinner, extra, comment
+FROM blood_sugar_level
+WHERE date BETWEEN '2024-12-01' AND '2024-12-31';

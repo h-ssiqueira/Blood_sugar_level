@@ -40,7 +40,7 @@ def importData(cursor,conn,dataDir):
             logging.info(f"Inserting data from {year}.")
             file = read_csv(file, sep=',')
             for _, row in file.iterrows():
-                parsed_date = datetime.strptime(row['Date'], "%a. %d/%b.")
+                parsed_date = datetime.strptime(f"{row['Date']}{year}", "%a. %d/%b.%Y")
                 cursor.execute("""
                     INSERT INTO blood_sugar_level
                     (date, breakfast, after_breakfast, lunch, after_lunch, dinner, after_dinner, extra, comment)
