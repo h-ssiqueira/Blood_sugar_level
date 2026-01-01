@@ -59,15 +59,6 @@ def importData(cursor,conn,dataDir):
         else:
             logging.info(f"Data from {year} already imported.")
 
-def updateViews(cursor,conn,dataDir):
-    logging.info("Updating views.")
-    with open(''.join([dataDir,"views.sql"]), 'r') as script:
-        statements = script.read().split(';')
-        for statement in statements:
-            cursor.execute(statement)
-    conn.commit()
-    logging.info("Views updated successfully.")
-
 if __name__ == '__main__':
 
     logging.basicConfig(level=logging.INFO,
@@ -77,6 +68,5 @@ if __name__ == '__main__':
     conn, cursor = stablishConnection()
     mountDatabase(cursor,conn,dataDir)
     importData(cursor,conn,dataDir)
-    updateViews(cursor,conn,dataDir)
     conn.close()
 
